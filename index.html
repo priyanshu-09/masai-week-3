@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Acme|Anton|Ubuntu&display=swap" rel="stylesheet">
+
+<style>
+	*{
+		font-size: 15px;
+		font-weight:  bold;
+		color: black;
+		font-family: 'Acme', sans-serif;
+		
+	}
+	.bodye{
+		background-color: #bad4ff;
+	}
+	.marginleft{
+		margin-left: 30px;
+	}
+	.marginright{
+		margin-right: 30px;
+	}
+	#main_div{
+		height: 710px;
+		width: 1600px;
+		
+		background-color: #dcf7f6;
+		border: 10px;
+		border-style: solid;
+		border-color: #001e4f;
+		padding: 100px;
+
+	}
+	.secondary_divs{
+		height: 8000px;
+		width: 300px;
+		float: left;
+		
+	}
+	.line_divs{
+		height: 50px;
+		width: 180px;
+		margin: 10px;
+		text-align: center;
+		float: left;
+	}
+	.grey{
+		background-color: grey;
+	}
+	.green{
+		background-image: linear-gradient(#d9fcfc, #088282);
+
+	}
+	.orange{
+		background-image: linear-gradient(#6df2e5, #007af5);
+	}
+	.purple{
+		background-image: linear-gradient(#d9fcfc, #088282);
+
+	}
+	.button{
+		height: 50px;
+		width: 180px;
+		margin: 10px;
+		text-align: center;
+		float: left;
+		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.4s;
+ 		 cursor: pointer;
+	}
+	.black{
+		background-color: black;
+		color: white;
+	}
+	.black:hover{
+		background-color: white;
+		color: black;
+		border: 2px solid black;
+	}
+	.greyboxes{
+		background-color: grey;
+		height: 50px;
+		width: 140px;
+		border: 1px;
+		border-style: solid;
+		margin margin-top: 30px;
+	}
+	.typing{
+		height: 50px;
+		width: 46.67px;
+		margin: 10px;
+		border: 1px;
+		border-style: solid;
+		float: left;
+	}
+	.keys{
+		height: 50px;
+		width: 40px;
+		margin: 10px;
+		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.4s;
+ 		 cursor: pointer;
+	}
+	.keycolor{
+		background-color:#001d3b;
+		color: #dcf7f6;
+	}
+	.keycolor:hover{
+		background-color: #dcf7f6;
+		color: #001d3b;
+		border: 2px solid #001d3b
+	}
+	.emptydivs{
+		float: left;
+	}
+	.emptykeys{
+		height: 50px;
+		width: 33.33px;
+		margin: 10px;
+		float: left;
+	}
+	.emptytyping{
+		height: 50px;
+		width: 0.07px;
+		margin: 10px;
+		border: 1px;
+		float: left;
+	}
+	#game_scores{
+		
+		width: 90px;
+		margin: 10px;
+		text-align: center;
+		float: left;
+		margin-bottom: 20px;
+		margin-top: 20px;
+
+	}
+	.main_heading{
+		font-size: 20px;
+		font-style: bold;
+	}
+	.float{
+		float: left;
+		margin-top: 10px;
+	}
+	.fuel{
+		font-weight: bold;
+		font-size: 18px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+	}
+	.choosing_car{
+		height: 20px;
+		width: 300px;
+		margin: 10px;
+		padding-left: 50px;
+		float: left;
+		font-style: bold;
+		font-size: 20px;
+		color: white;
+	}
+	.fontchange{
+		font-size: 25px;
+	}
+	.background1{
+		
+		border: 3px solid black;
+		text-align: center;
+	}
+	.delete{
+		width: 60px;
+		margin-bottom: 20px;
+	}
+	
+	
+	.fontchange2{
+		font-size: 18px;
+	}
+	
+	.bordersec{
+		border: 2px solid;
+		font-size: 18px;
+	}
+
+</style>
+<body class="bodye">
+	<div id="main_div">
+		<div class="secondary_divs fontchange">
+			Please choose your car
+			<select id="cars">
+				<option class="car" value=""></option>
+				<option class="car" value="15"> BMW 7 Series</option>
+				<option class="car" value="13">BMW 5 Series</option>
+				<option class="car" value="17">BMW 3 Series</option>
+				<option class="car" value="12"> BMW 1 Series</option>
+				<option class="car" value="16">BMW 6 Series</option>
+				<option class="car" value="10">BMW M Series</option>
+				<option class="car" value="12">BMW X Series</option>
+				<option class="car" value="15">Mercedes Benz A Class</option>
+				<option class="car" value="13">Mercedes Benz S Class</option>
+				<option class="car" value="16">Mercedes Benz E Class</option>
+				<option class="car" value="8">Mercedes Benz G Class</option>
+				<option class="car" value="14">Mercedes Benz C Class</option>
+				<option class="car" value="15">Audi A Series</option>
+				<option class="car" value="17">Audi Q Series</option>
+				<option class="car" value="17">Audi R Series</option>
+				<option class="car" value="11" >Lamborghini</option>
+				<option class="car" value="6">Bugatti</option>
+				<option class="car" value="19">Any Volkswagen</option>
+			</select><br>
+			<div class="choosing_car">
+				
+			</div>
+			If your car doesn't appear above please manually enter the mileage here -
+			<input type="numbers" name="fgyghb" class="car background1" id="manual">
+			<div class="choosing_car"></div>
+			<div >
+				<button class="black button" onclick="continu()" style="margin-left: 40px;margin-right: 100px;">CONTINUE</button>
+			</div>
+			<div class="choosing_car" style="color: black;">Your car's Mileage</div>
+			<br>
+			<div>
+				<input type="numbers" id="mile" class="background1" style="height: 60px; font-size: 20px; width: 60px;margin-left: 100px;text-align: center; ">
+			</div>
+			<div class="choosing_car"></div>
+			<div class=" line_divs fontchange2">
+				<input type="numbers" class="black line_divs" id="distrem">
+				Distance you can travel 
+			</div>
+		</div>
+		<div class="secondary_divs">
+			<div class="line_divs fontchange2 white">
+				Your entered value will appear here
+				<input type="numbers" id="input_bar" class="background1" style="height: 37px; width: 140px; text-align: center;">
+
+			</div>
+			<div class="choosing_car"></div>
+			<div class="line_divs fontchange2 darkblue ">
+				Total distance you travelled 
+				<input type="numbers" id="totaldist" class="background1" style="height: 50px; width: 140px;text-align: center;">
+
+			</div>
+			<div class="choosing_car"></div>
+			<div class="line_divs fontchange2">
+				Total fuel you filled 
+				<input type="numbers" id="totalfuel" class="background1" style="height: 50px; width: 140px;text-align: center;">
+			</div>
+			<div class="choosing_car"></div>
+			<div class="line_divs">
+				<div class="emptydivs">
+					<button onclick="num(1)" class="keys keycolor marginleft">1</button>
+				</div>
+				<div class="emptydivs">
+					<button onclick="num(2)" class="keys keycolor">2</button>
+				</div>
+				<div class="emptydivs">
+					<button onclick="num(3)" class="keys keycolor marginright">3</button>
+				</div>
+			</div>
+			<div class="line_divs">
+				<div class="emptydivs">
+					<button onclick="num(4)" class="keys keycolor marginleft">4</button>
+				</div>
+				<div class="emptydivs">
+					<button onclick="num(5)" class="keys keycolor">5</button>
+				</div>
+				<div class="emptydivs">
+					<button onclick="num(6)" class="keys keycolor marginright">6</button>
+				</div>
+			</div>
+			<div class="line_divs">
+				<div class="emptydivs">
+					<button onclick="num(7)" class="keys keycolor marginleft">7</button>
+				</div>
+				<div class="emptydivs">
+					<button onclick="num(8)" class="keys keycolor">8</button>
+				</div>
+				<div class="emptydivs">
+					<button onclick="num(9)" class="keys keycolor marginright">9</button>
+				</div>
+			</div>
+			<div class="line_divs">
+				<div class="emptykeys">
+					
+				</div>
+				<div class="emptydivs">
+					<button onclick="num(0)" class="keys keycolor">0</button>
+				</div>
+				<div class="emptykeys ">
+					<button onclick="del()" class=" keys black marginright delete">DEL</button>
+				</div>
+			</div>
+			<div class="choosing_car"></div>
+			<div >
+				<button class="black button" onclick="enterfuel()">ENTER FUEL</button>
+			</div>
+			<div >
+				<button class="black button" onclick="enterdist()">ENTER DISTANCE</button>
+			</div>
+			
+		</div>
+		<div  class="secondary_divs ">
+			<div class=" main_heading white fontchange">
+				Distance Log (in Kms)
+			</div>
+			<div id="distance_tr" class="bordersec"></div>
+		</div>
+		<div  class="secondary_divs">
+			<div class=" main_heading white fontchange">
+				Fuel Log (in Litre)
+			</div>
+			<div id="fuel_tr" class="bordersec"></div>
+		</div>
+		<script type="text/javascript">
+			var DIST = document.getElementById('distance_tr');
+			var FUEL = document.getElementById('fuel_tr');
+			var arrFuel =[]
+			var arrDist =[]
+
+			function num(input){
+				document.getElementById('input_bar').value += input;
+			}
+			function enterfuel(){
+				var f = document.getElementById('input_bar').value;
+				var d = new Date()
+				var Div = document.createElement('div')
+				Div.textContent = '>> You filled    '+f+'    L on    '+d;
+				Div.setAttribute('class','fuel')
+				FUEL.appendChild(Div);
+				var c=Number(f)
+				arrFuel.push(c)
+				var output=0
+  				for(var i=0; i < arrFuel.length ; i++){
+   				output+=arrFuel[i]
+   				 }
+   			 
+				document.getElementById('totalfuel').value = output;
+				document.getElementById('input_bar').value ='';
+				var y = document.getElementById('totalfuel').value;
+				var z = document.getElementById('totaldist').value;
+				 var t = document.getElementById('distrem').value;
+				 var a =Number(document.getElementById('mile').value)
+
+				t =  y*a -z
+				if(t<0){
+					alert('How the hell are you still travelling!!')
+				}
+				else{
+					document.getElementById('distrem').value = t;
+				}
+			}
+			function enterdist(){
+				var f = document.getElementById('input_bar').value;
+				var d = new Date()
+				var Div = document.createElement('div')
+				Div.textContent = '>> You travelled     '+f+'      Km on      '+d;
+				Div.setAttribute('class','fuel')
+				DIST.appendChild(Div);
+				var c=Number(f)
+				arrDist.push(c)
+				var output=0
+  				for(var i=0; i < arrDist.length ; i++){
+   				output+=arrDist[i]
+   				 }
+   			 
+				document.getElementById('totaldist').value = output;
+				document.getElementById('input_bar').value =''
+				var y = document.getElementById('totalfuel').value;
+				var z = document.getElementById('totaldist').value;
+				 var t = document.getElementById('distrem').value;
+				 var a =Number(document.getElementById('mile').value)
+				t =  y*a -z
+				if(t<0){
+					alert('How the hell are you still travelling!!')
+				}
+				else{
+					document.getElementById('distrem').value = t;
+				}
+			}
+			function del(){
+				var p1 = document.getElementById('input_bar').value;
+	    		var p2=''
+	      		for(var i=0; i<=p1.length-2;i++){
+	        		p2 += p1[i]
+	    		 }
+				document.getElementById('input_bar').value = p2;
+    		}
+    		function continu(){
+    			var m = Number(document.getElementById('cars').value)
+    			if(m==0){
+    				document.getElementById('mile').value = document.getElementById('manual').value;
+    			}
+    			else{
+    				document.getElementById('mile').value = m;
+    			}
+    		}
+		</script>
