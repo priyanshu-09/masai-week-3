@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<head>
+	<title>
+		Stock Keeper
+	</title>
+	<style type="text/css">
+		#main_div{
+			width: 600px;
+			height: 800px;
+			margin-left: 400px;
+			margin-top: 200px;
+
+		}
+		#heading{
+			height: 200px;
+			width: 600px;
+			margin-right: 100px;
+			font-size: 40px;
+			text-align: center;
+			padding-left:  150px;
+			font-weight: bold;
+
+		}
+		.keys{
+			height: 50px;
+			width: 100px;
+		}
+		#secondary_div{
+			height: 600px;
+			width: 1200px;
+		}
+		.secondary_divs{
+			height: 600px;
+			width: 250px;
+			padding: 100px;
+			padding-top: 200px;
+			float: left;
+			border: 2px solid;
+		}
+		.text_divs{
+			font-weight: bold;
+			font-size: 20px;
+			text-align: center;
+
+		}
+		.border{
+			border: 2px solid
+		}
+		.black_buttons{
+			background-color: black;
+			color: white;
+			
+			-webkit-transition-duration: 0.4s; /* Safari */
+  			transition-duration: 0.4s;
+ 			cursor: pointer;
+		}
+		.black_buttons:hover{
+			background-color: white;
+			color: black;
+			border: 2px solid;
+		}
+		p{
+			white-space: pre-line;
+		}
+	</style>
+</head>
+<body>
+	<div id="main_div">
+		<div id="heading">
+			STOCK KEEPER
+		</div>
+		<div id="secondary_div">
+			<div class="secondary_divs">
+				<div class="text_divs">
+					Add Items
+				</div>
+				<br><hr>
+				<form>
+					<input type="text" id="choosing" style="border: 2px; border-style: solid;">
+					<input type="number" id="value" style="border: 2px; border-style: solid;height: 20px; width:30px;">
+				</form>
+				<br>
+				<button onclick="continu()" class="keys black_buttons">
+					Add
+				</button>
+				<br><br><br>
+				<div class="text_divs">
+					Deduct Items
+				</div>
+				<br><hr>
+				<form>
+					<input type="text" id="removing" style="border: 2px; border-style: solid;">
+					<input type="number" id="d_value" style="border: 2px; border-style: solid;height: 20px; width:30px;">
+				</form>
+				<br>
+				<button onclick="del()" class="black_buttons keys">
+					Deduct
+				</button>
+			</div>
+			<div class="secondary_divs">
+				<div class="text_divs">
+					ItemLog
+				</div>
+				<div id="log" class="border"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var log = document.getElementById('log');
+		
+		var stock =[]
+		var stock_name =[]
+		var stock_quantity =[]
+		
+
+
+		function continu(){
+			var balances = []
+			var item = {
+
+			}
+			var name = document.getElementById('choosing').value;
+			var quantity = Number(document.getElementById('value').value)
+			
+			item.name = name;
+			item.quantity = quantity;
+			console.log(item)
+			stock.push(item)
+			/*for(var i=0; i<stock.length/2;i++){
+				for(var n=i;n<stock.length;n++){
+					if(stock[i].name !=stock[n].name){
+
+					}
+					else{
+						stock[i].quantity+=stock[n].quantity
+					}
+				}
+			}
+			for(var i=0; i<stock.length/2;i++){
+				var q = stock[i].quantity;
+				stock_quantity.push(q)
+
+			}9
+			console.log(stock);
+			console.log(stock_name)*/
+
+			
+			
+			for(var i=0 ; i<stock.length;i++){
+				var name =stock[i].name;
+				var found = false;
+				for(var n=0;n<balances.length;n++){
+					if (name == balances[n].name){
+						balances[n].quantity = balances[n].quantity + stock[i].quantity;
+						found = true;
+					}
+				}
+				if (found == false) {
+					var balance = {
+
+					}
+					balance.name = name;
+					balance.quantity = stock[i].quantity;
+					balances.push(balance);
+				}
+			}
+
+			
+			/*stock.push(item)
+			console.log(stock[0].name);
+			console.log(stock);*/
+			var d = ''
+			log.innerHTML=''
+			console.log(balances)
+			console.log(balances.length)
+			for(var j=0; j<balances.length; j++){
+				console.log(balances[0].name)
+				console.log(j)
+				d+= balances[j].name +balances[j].quantity+'\n'
+				console.log(d)
+
+			}
+			
+			var Div = document.createElement('p');
+			Div.innerHTML=d;
+			log.appendChild(Div);
+			document.getElementById('choosing').value='';
+			document.getElementById('value').value='';
+			document.getElementById('removing').value='';
+			document.getElementById('d_value').value=''
+
+		}
+
+
+		function del(){
+			var balances = [];
+			var item = {
+
+			}
+			var name = document.getElementById('removing').value;
+			var quantity = -Number(document.getElementById('d_value').value)
+			
+			item.name = name;
+			item.quantity = quantity;
+			console.log(item)
+			stock.push(item)
+			/*for(var i=0; i<stock.length/2;i++){
+				for(var n=i;n<stock.length;n++){
+					if(stock[i].name !=stock[n].name){
+
+					}
+					else{
+						stock[i].quantity+=stock[n].quantity
+					}
+				}
+			}
+			for(var i=0; i<stock.length/2;i++){
+				var q = stock[i].quantity;
+				stock_quantity.push(q)
+
+			}9
+			console.log(stock);
+			console.log(stock_name)*/
+
+			
+			
+			for(var i=0 ; i<stock.length;i++){
+				var name =stock[i].name;
+				var found = false;
+				for(var n=0;n<balances.length;n++){
+					if (name == balances[n].name){
+						balances[n].quantity = balances[n].quantity + stock[i].quantity;
+						found = true;
+					}
+				}
+				if (found == false) {
+					var balance = {
+
+					}
+					balance.name = name;
+					balance.quantity = stock[i].quantity;
+					balances.push(balance);
+				}
+			}
+
+			
+			/*stock.push(item)
+			console.log(stock[0].name);
+			console.log(stock);*/
+			var d = ''
+			log.innerHTML=''
+			console.log(balances)
+			console.log(balances.length)
+			for(var j=0; j<balances.length; j++){
+				console.log(balances[0].name)
+				console.log(j)
+				d+= balances[j].name +balances[j].quantity+'\n'
+				console.log(d)
+
+			}
+			
+			var Div = document.createElement('p');
+			Div.innerHTML=d;
+			log.appendChild(Div);
+			document.getElementById('choosing').value='';
+			document.getElementById('value').value='';
+			document.getElementById('removing').value='';
+			document.getElementById('d_value').value=''
+		}
+	</script>
+</body>
